@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import {LcarsModule} from './lcars/lcars.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { StoreModule } from '@ngrx/store';
+import {ticketsReducer} from './tickets/TicketsReducer';
+import { TicketsListPageComponent } from './tickets/tickets-list-page/tickets-list-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    TicketsListPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LcarsModule
+    LcarsModule,
+    StoreModule.forRoot({ tickets: ticketsReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
