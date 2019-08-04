@@ -1,6 +1,7 @@
 <h1>Tickets</h1>
 <p>Your department has closed {{closedCount$ | async}} ticket(s)</p>
 <h5>Open Tickets</h5>
-<ul>
-  <li *ngFor="let ticket of tickets$ | async">{{ticket}}</li>
-</ul>
+<div *ngFor="let ticket of tickets$ | async">
+  <div>{{ticket.title}}</div>
+  <button (click)="onDeleteClick(ticket)">Delete</button>
+</div>

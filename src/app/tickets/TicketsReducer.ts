@@ -1,7 +1,10 @@
-import {createAction, createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
+import {createAction, createFeatureSelector, createReducer, createSelector, on, props} from '@ngrx/store';
 import {TicketsState} from './TicketsState';
+import {Ticket} from './Ticket';
+import {ArrayHelpers} from '../ArrayHelpers';
 
-export const reset = createAction('Tickets/Reset');
+export const resetAction = createAction('Tickets/Reset');
+export const closeTicketAction = createAction('Tickets/Delete', props<Ticket>());
 
 const ticketsFeatureSelector = createFeatureSelector<TicketsState>('tickets');
 
@@ -9,10 +12,18 @@ export const getClosedTicketsCount = createSelector(ticketsFeatureSelector, (sta
 export const getOpenTickets = createSelector(ticketsFeatureSelector, (state: TicketsState) => state.openTickets);
 
 const initialState: TicketsState = {
-  openTickets: ['Sample Ticket'],
+  openTickets: [ new Ticket('Sample Ticket')],
   closedCount: 42
 };
 
 export const ticketsReducer = createReducer(initialState,
-  on(reset, state => initialState),
+  on(resetAction, () => ({
+    openTickets: [],
+    closedCount: 0
+  })),
+  on(closeTicketAction, (state, ticket: Ticket) => ({
+    ...initialState,
+    closedCount: state.closedCount + 1,
+    openTickets: ArrayHelpers.removeElement(state.openTickets, ticket)
+  })),
 );
