@@ -1,2 +1,6 @@
 <h1>Tickets</h1>
 <p>Your department has closed {{closedCount$ | async}} ticket(s)</p>
+<h5>Open Tickets</h5>
+<ul>
+  <li *ngFor="let ticket of tickets$ | async">{{ticket}}</li>
+</ul>

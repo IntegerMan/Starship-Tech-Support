@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {TicketsState} from '../TicketsState';
+import {getClosedTicketsCount, getOpenTickets} from '../TicketsReducer';
 
 @Component({
   selector: 'ssit-tickets-list-page',
@@ -10,14 +11,14 @@ import {TicketsState} from '../TicketsState';
 })
 export class TicketsListPageComponent implements OnInit {
   public closedCount$: Observable<number>;
-  // public tickets$: Observable<string[]>;
+  public tickets$: Observable<string[]>;
 
   constructor(private store: Store<TicketsState>) {
-    // this.tickets$ = store.pipe(select('tickets'));
-    this.closedCount$ = store.pipe(select('tickets'));
   }
 
   ngOnInit() {
+    this.tickets$ = this.store.select(getOpenTickets);
+    this.closedCount$ = this.store.select(getClosedTicketsCount);
   }
 
 }
