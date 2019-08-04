@@ -6,9 +6,16 @@ import { AppComponent } from './app.component';
 import {LcarsModule} from './lcars/lcars.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { StoreModule } from '@ngrx/store';
+import {MetaReducer, StoreModule} from '@ngrx/store';
 import {ticketsReducer} from './tickets/TicketsReducer';
 import { TicketsListPageComponent } from './tickets/tickets-list-page/tickets-list-page.component';
+import {environment} from '../environments/environment';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {storeFreeze} from 'ngrx-store-freeze';
+
+export const metaReducers: MetaReducer[] = environment.production
+  ? []
+  : [storeFreeze];
 
 @NgModule({
   declarations: [
@@ -21,7 +28,11 @@ import { TicketsListPageComponent } from './tickets/tickets-list-page/tickets-li
     BrowserModule,
     AppRoutingModule,
     LcarsModule,
-    StoreModule.forRoot({ tickets: ticketsReducer })
+    StoreModule.forRoot({ tickets: ticketsReducer }, {metaReducers}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

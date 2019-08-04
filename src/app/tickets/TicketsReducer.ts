@@ -24,6 +24,6 @@ export const ticketsReducer = createReducer(initialState,
   on(closeTicketAction, (state, ticket: Ticket) => ({
     ...initialState,
     closedCount: state.closedCount + 1,
-    openTickets: ArrayHelpers.removeElement(state.openTickets, ticket)
+    openTickets: ArrayHelpers.removeElement(initialState.openTickets, ticket, t => t.title === ticket.title)
   })),
 );
