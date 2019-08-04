@@ -1,21 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="lcars-app-container">
+  <!-- Header -->
+  <div id="header" class="lcars-row header">
 
-<router-outlet></router-outlet>
+    <!-- ELBOW -->
+    <div class="lcars-elbow left-bottom lcars-tan-bg"></div>
+
+    <!-- BAR WITH TITLE -->
+    <div class="lcars-bar horizontal">
+      <div class="lcars-title right">Sharship IT</div>
+    </div>
+
+    <!-- ROUNDED EDGE DECORATED -->
+    <div class="lcars-bar horizontal right-end decorated"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="left-menu" class="lcars-column start-space lcars-u-1">
+
+    <!-- FILLER -->
+    <div class="lcars-bar lcars-u-1"></div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer" class="lcars-row ">
+    <!-- ELBOW -->
+    <div class="lcars-elbow left-top lcars-tan-bg"></div>
+    <!-- BAR -->
+    <div class="lcars-bar horizontal both-divider bottom"></div>
+    <!-- ROUNDED EDGE -->
+    <div class="lcars-bar horizontal right-end left-divider bottom"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
