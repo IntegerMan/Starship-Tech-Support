@@ -12,6 +12,7 @@ import { TicketsListPageComponent } from './tickets/tickets-list-page/tickets-li
 import {environment} from '../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {storeFreeze} from 'ngrx-store-freeze';
+import { RootSidebarComponent } from './root-sidebar/root-sidebar.component';
 
 export const metaReducers: MetaReducer[] = environment.production
   ? []
@@ -22,7 +23,8 @@ export const metaReducers: MetaReducer[] = environment.production
     AppComponent,
     HomePageComponent,
     NotFoundPageComponent,
-    TicketsListPageComponent
+    TicketsListPageComponent,
+    RootSidebarComponent
   ],
   imports: [
     BrowserModule,
