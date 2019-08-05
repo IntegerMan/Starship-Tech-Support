@@ -7,6 +7,7 @@ import {CrewPageComponent} from './crew/crew-page/crew-page.component';
 import {SchedulePageComponent} from './crew/schedule-page/schedule-page.component';
 import {PoliciesPageComponent} from './crew/policies-page/policies-page.component';
 import {SystemsPageComponent} from './systems/systems-page/systems-page.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -20,7 +21,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
