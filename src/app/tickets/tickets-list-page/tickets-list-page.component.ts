@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Ticket} from '../Ticket';
+import {Ticket} from '../../../Core/Models/Ticket';
 import {GameStateStore} from '../../Reducers/GameStateStore';
 import {closeTicketAction} from '../../Reducers/GameStateActions';
 

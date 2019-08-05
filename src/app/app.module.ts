@@ -14,6 +14,10 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {storeFreeze} from 'ngrx-store-freeze';
 import { RootSidebarComponent } from './root-sidebar/root-sidebar.component';
 import {GameStateStore} from './Reducers/GameStateStore';
+import {CrewPageComponent} from './crew/crew-page/crew-page.component';
+import { SchedulePageComponent } from './crew/schedule-page/schedule-page.component';
+import { PoliciesPageComponent } from './crew/policies-page/policies-page.component';
+import { SystemsPageComponent } from './systems/systems-page/systems-page.component';
 
 export const metaReducers: MetaReducer[] = environment.production
   ? []
@@ -22,10 +26,14 @@ export const metaReducers: MetaReducer[] = environment.production
 @NgModule({
   declarations: [
     AppComponent,
+    CrewPageComponent,
     HomePageComponent,
     NotFoundPageComponent,
     TicketsListPageComponent,
-    RootSidebarComponent
+    RootSidebarComponent,
+    SchedulePageComponent,
+    PoliciesPageComponent,
+    SystemsPageComponent,
   ],
   imports: [
     BrowserModule,

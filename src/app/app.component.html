@@ -1,7 +1,11 @@
 <div class="lcars-app-container">
 
   <!-- Header -->
-  <ssit-lcars-header>{{ScreenName}}</ssit-lcars-header>
+  <ssit-lcars-header>
+    <div style="margin-top: 0.15rem; margin-left: 0.25rem; margin-right: 0.25rem;" class="small">
+      {{time$ | async}}
+    </div>
+  </ssit-lcars-header>
 
   <!-- Sidebar -->
   <ssit-lcars-sidebar>

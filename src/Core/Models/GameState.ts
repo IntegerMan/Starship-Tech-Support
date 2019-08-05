@@ -1,4 +1,4 @@
-import {Ticket} from '../tickets/Ticket';
+import {Ticket} from './Ticket';
 import {GameTime} from './GameTime';
 
 export interface GameState {

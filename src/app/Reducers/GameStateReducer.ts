@@ -1,9 +1,9 @@
 import {createReducer, on} from '@ngrx/store';
-import {GameState} from './GameState';
-import {Ticket} from '../tickets/Ticket';
-import {ArrayHelpers} from '../helpers/ArrayHelpers';
+import {GameState} from '../../Core/Models/GameState';
+import {Ticket} from '../../Core/Models/Ticket';
+import {ArrayHelpers} from '../../helpers/ArrayHelpers';
 import {beginShiftAction, buildDefaultState, closeTicketAction, resetAction} from './GameStateActions';
-import {GameSimulator} from '../../simulator/GameSimulator';
+import {GameSimulator} from '../../Core/simulator/GameSimulator';
 
 const initialState: GameState = buildDefaultState();
 

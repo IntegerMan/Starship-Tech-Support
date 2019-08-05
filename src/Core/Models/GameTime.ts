@@ -30,4 +30,8 @@ export class GameTime {
 
     return new GameTime(this.month, day, this.year, hour, min);
   }
+
+  public get text(): string {
+    return `${this.month}.${this.day}.${this.year} ${this.hour}:${this.minute}`;
+  }
 }

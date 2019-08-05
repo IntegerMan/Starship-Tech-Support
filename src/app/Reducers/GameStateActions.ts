@@ -1,7 +1,7 @@
 import {createAction, props} from '@ngrx/store';
-import {Ticket} from '../tickets/Ticket';
-import {GameState} from './GameState';
-import {GameTime} from './GameTime';
+import {Ticket} from '../../Core/Models/Ticket';
+import {GameState} from '../../Core/Models/GameState';
+import {GameTime} from '../../Core/Models/GameTime';
 
 export const resetAction = createAction('Reset');
 export const closeTicketAction = createAction('Tickets/Close', props<Ticket>());
