@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GameStateStore} from '../../Reducers/GameStateStore';
+import {beginShiftAction} from '../../Reducers/GameStateActions';
 
 @Component({
   selector: 'ssit-lcars-footer',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LcarsFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: GameStateStore) { }
 
   ngOnInit() {
   }
 
+  onBeginShiftClicked(): void {
+    this.store.dispatch(beginShiftAction());
+  }
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Store} from '@ngrx/store';
-import {TicketsState} from '../TicketsState';
-import {closeTicketAction, getClosedTicketsCount, getOpenTickets} from '../TicketsReducer';
 import {Ticket} from '../Ticket';
+import {GameStateStore} from '../../Reducers/GameStateStore';
+import {closeTicketAction} from '../../Reducers/GameStateActions';
 
 @Component({
   selector: 'ssit-tickets-list-page',
@@ -14,12 +13,12 @@ export class TicketsListPageComponent implements OnInit {
   public closedCount$: Observable<number>;
   public tickets$: Observable<Ticket[]>;
 
-  constructor(private store: Store<TicketsState>) {
+  constructor(private store: GameStateStore) {
   }
 
   ngOnInit(): void {
-    this.tickets$ = this.store.select(getOpenTickets);
-    this.closedCount$ = this.store.select(getClosedTicketsCount);
+    this.tickets$ = this.store.select(this.store.getOpenTickets);
+    this.closedCount$ = this.store.select(this.store.getClosedTicketsCount);
   }
 
   onDeleteClick(ticket: Ticket): void {

@@ -7,6 +7,7 @@
   text-align right
   background default-color
   height base-height
+  min-width base-width;
   width base-width
   box-sizing border-box
   padding-left base-spacing * 3
@@ -18,6 +19,9 @@
 
   *
     margin 0
+
+  &.auto-width
+    width auto
 
   &.left-rounded
     border-top-left-radius (base-height/2)
@@ -38,11 +42,17 @@
     cursor pointer
     height (base-height * 0.65)
     text-decoration-line none
+    background-color default-color-button
+
     &:hover
       background-color default-color-hover
 
     &:active
       background-color default-color-highlight
+
+  &.lcars-row
+    height (base-height/2)
+    margin-left 0.25 rem
 
   .{prefix}element-addition
     display flex

@@ -1,7 +1,7 @@
-<h1>Tickets</h1>
-<p>Your department has closed {{closedCount$ | async}} ticket(s)</p>
-<h5>Open Tickets</h5>
+<h1>Work Items</h1>
+<p>Your department has closed {{closedCount$ | async}} work item(s)</p>
+<h2>Open Work Items</h2>
 <div *ngFor="let ticket of tickets$ | async">
   <div>{{ticket.title}}</div>
-  <button (click)="onDeleteClick(ticket)">Delete</button>
+  <ssit-lcars-button (click)="onDeleteClick(ticket)" title="Close"></ssit-lcars-button>
 </div>
