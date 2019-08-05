@@ -1,8 +1,12 @@
-import {Ticket} from './Ticket';
+import {WorkItem} from './WorkItem';
 import {GameTime} from './GameTime';
+import {CrewMember} from './crew/CrewMember';
+import {ShipSystem} from './systems/ShipSystem';
 
 export interface GameState {
-  openTickets: Ticket[];
+  openTickets: WorkItem[];
   closedCount: number;
   time: GameTime;
+  crew: CrewMember[];
+  systems: ShipSystem[];
 }

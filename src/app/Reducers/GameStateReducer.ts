@@ -1,18 +1,14 @@
 import {createReducer, on} from '@ngrx/store';
-import {GameState} from '../../Core/Models/GameState';
-import {Ticket} from '../../Core/Models/Ticket';
 import {ArrayHelpers} from '../../helpers/ArrayHelpers';
-import {beginShiftAction, buildDefaultState, closeTicketAction, resetAction} from './GameStateActions';
+import {beginShiftAction, closeTicketAction, resetAction} from './GameStateActions';
 import {GameSimulator} from '../../Core/simulator/GameSimulator';
 
-const initialState: GameState = buildDefaultState();
-
-export const gameStateReducer = createReducer(initialState,
-  on(resetAction, () => buildDefaultState()),
-  on(closeTicketAction, (state, ticket: Ticket) => ({
+export const gameStateReducer = createReducer(GameSimulator.buildDefaultState(),
+  on(resetAction, () => GameSimulator.buildDefaultState()),
+  on(beginShiftAction, state => GameSimulator.simulate(state)),
+  on(closeTicketAction, (state, {workItem}) => ({
     ...state,
     closedCount: state.closedCount + 1,
-    openTickets: ArrayHelpers.removeElement(state.openTickets, ticket, t => t.title === ticket.title)
+    openTickets: ArrayHelpers.removeElement(state.openTickets, workItem, t => t.title === workItem.title)
   })),
-  on(beginShiftAction, state => GameSimulator.simulate(state))
 );
