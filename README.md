@@ -1,27 +1,65 @@
-# StarshipIt
+# Starship IT
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+## Overview
 
-## Development server
+A computer UI based management simulation game. In spaaaaace!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technical Details
 
-## Code scaffolding
+### Platform
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 8 with TypeScript and NgRx for state management
 
-## Build
+Possibly reliant on a back-end web server written in NodeJS
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Targets
 
-## Running unit tests
+This targets a web-based delivery mechanism with possibilities of mobile or desktop (via Electron) support.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This will be deployed to Itch.io as well as to a third-party site of my choosing.
 
-## Running end-to-end tests
+### Device Considerations
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This will need to support IE 11, Chrome, Firefox, Safari, and Opera.
 
-## Further help
+## Gameplay
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Turn-Based
+
+This is a turn-based management game with the player able to make decisions before clicking "Begin Shift". Once a shift begins, it will complete and you'll see the time cards and updates made by everyone on your team
+
+### Work Items
+
+The crew will have a variety of work items to work on including
+
+### Crew Members
+
+### Player Interactions
+
+Players will take on various interactions:
+
+- Reviewing the result of the previous shift
+- Prioritizing crew actions
+- Creating new initiatives as needed for the crew in idle time
+- Setting policies on crew time
+
+### Setting
+
+#### Systems
+
+The following types of systems are available:
+
+- Work Item Management
+- 
+
+#### Departments
+
+##### Engineering
+
+##### Medical
+
+##### Supply
+
+##### Tactical
+
+##### Command
