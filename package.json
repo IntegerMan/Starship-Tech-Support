@@ -26,6 +26,7 @@
     "@ngrx/store": "^8.2.0",
     "@ngrx/store-devtools": "^8.2.0",
     "@syncfusion/ej2-angular-grids": "^17.2.39",
+    "@syncfusion/ej2-angular-navigations": "^17.2.39",
     "@types/jest": "^24.0.16",
     "jest": "^24.8.0",
     "jest-preset-angular": "^7.1.1",
