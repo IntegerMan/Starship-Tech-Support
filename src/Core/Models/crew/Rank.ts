@@ -1,23 +1,23 @@
 export enum Rank {
   // Enlisted
-  CrewmanRecruit = 10,
-  CrewmanApprentice,
-  Crewman,
-  PettyOfficer3rdClass,
-  PettyOfficer2ndClass,
-  PettyOfficer1stClass,
-  ChiefPettyOfficer,
-  SeniorChiefPettyOfficer,
-  MasterChiefPettyOfficer,
+  crewmanRecruit = 10,
+  crewmanApprentice,
+  crewman,
+  pettyOfficer3rdClass,
+  pettyOfficer2ndClass,
+  pettyOfficer1stClass,
+  chiefPettyOfficer,
+  seniorChiefPettyOfficer,
+  masterChiefPettyOfficer,
 
   // Officers
-  EnsignJg= 50,
-  Ensign,
-  LieutenantJg,
-  Lieutenant,
-  LieutenantCommander,
-  Commander,
-  Captain,
-  Commodore,
-  Admiral
+  ensignJg= 50,
+  ensign,
+  lieutenantJg,
+  lieutenant,
+  lieutenantCommander,
+  commander,
+  captain,
+  commodore,
+  admiral
 }

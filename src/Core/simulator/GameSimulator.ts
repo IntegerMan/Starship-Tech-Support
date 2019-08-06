@@ -2,6 +2,10 @@ import {GameState} from '../Models/GameState';
 import {GameTime} from '../Models/GameTime';
 import {WorkItem} from '../Models/WorkItem';
 import {WorkItemType} from '../Models/WorkItemType';
+import {CrewMember} from '../Models/crew/CrewMember';
+import {Gender} from '../Models/crew/Gender';
+import {Department} from '../Models/Department';
+import {Rank} from '../Models/crew/Rank';
 
 export class GameSimulator {
   public static simulate(state: GameState): GameState {
@@ -20,7 +24,15 @@ export class GameSimulator {
       ],
       closedCount: 0,
       time: new GameTime(8, 4, 2422, 3, 20),
-      crew: [],
+      crew: [
+        new CrewMember(1, 'Richard', 'Hendricks', Gender.male, Rank.pettyOfficer3rdClass, Department.command),
+        new CrewMember(2, 'Dinesh', 'Chugtai', Gender.male, Rank.crewman, Department.engineering),
+        new CrewMember(3, 'Bertram', 'Gilfoyle', Gender.male, Rank.crewman, Department.engineering),
+        new CrewMember(4, 'Jared', 'Dunn', Gender.male, Rank.crewmanApprentice, Department.supply),
+        new CrewMember(5, 'Erlich', 'Bachman', Gender.male, Rank.chiefPettyOfficer, Department.medical),
+        new CrewMember(6, 'Nelson', 'Bighetti', Gender.male, Rank.crewmanRecruit, Department.science),
+        new CrewMember(7, 'Jian', 'Yang', Gender.male, Rank.crewmanRecruit, Department.tactical),
+      ],
       systems: []
     };
 

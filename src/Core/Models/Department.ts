@@ -1,8 +1,8 @@
 export enum Department {
-  Science,
-  Engineering,
-  Medical,
-  Supply,
-  Tactical,
-  Command
+  science,
+  engineering,
+  medical,
+  supply,
+  tactical,
+  command
 }

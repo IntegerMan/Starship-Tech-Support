@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {CrewMember} from '../../../Core/Models/crew/CrewMember';
+import {GameStateStore} from '../../Reducers/GameStateStore';
 
 @Component({
   selector: 'ssit-crew-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrewPageComponent implements OnInit {
 
-  constructor() { }
+  public crew$: Observable<CrewMember[]>;
+
+  constructor(private store: GameStateStore) {
+
+  }
 
   ngOnInit() {
+    this.crew$ = this.store.select(this.store.getCrewMembers);
   }
 
 }

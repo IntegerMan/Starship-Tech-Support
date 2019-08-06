@@ -19,6 +19,7 @@ import { SchedulePageComponent } from './crew/schedule-page/schedule-page.compon
 import { PoliciesPageComponent } from './crew/policies-page/policies-page.component';
 import { SystemsPageComponent } from './systems/systems-page/systems-page.component';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
 
 export const metaReducers: MetaReducer[] = environment.production
   ? []
@@ -38,6 +39,9 @@ export const metaReducers: MetaReducer[] = environment.production
   ],
   imports: [
     BrowserModule,
+    // SyncFusion Includes
+    GridModule,
+    // Other includes
     AppRoutingModule,
     LcarsModule,
     StoreModule.forRoot({
