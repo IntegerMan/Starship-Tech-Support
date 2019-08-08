@@ -8,5 +8,6 @@ export class GameStateStore extends Store<GameState> {
   public readonly getOpenTickets = createSelector(gameSelector, (state: GameState) => state.openTickets);
   public readonly getCrewMembers = createSelector(gameSelector, (state: GameState) => state.crew);
   public readonly getTime = createSelector(gameSelector, (state: GameState) => state.time.text);
+  public readonly getUpdates = createSelector(gameSelector, (state: GameState) => state.messages);
 }
 

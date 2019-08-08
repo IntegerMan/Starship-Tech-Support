@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {GameStateStore} from '../Reducers/GameStateStore';
+import {GameMessage} from '../../Core/Models/GameMessage';
 
 @Component({
   selector: 'ssit-home-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  public updates$: Observable<GameMessage[]>;
 
-  ngOnInit() {
+  constructor(private store: GameStateStore) {
+
+  }
+
+  ngOnInit(): void {
+    this.updates$ = this.store.select(this.store.getUpdates);
   }
 
 }

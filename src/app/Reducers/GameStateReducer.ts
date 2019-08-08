@@ -5,7 +5,7 @@ import {GameSimulator} from '../../Core/simulator/GameSimulator';
 
 export const gameStateReducer = createReducer(GameSimulator.buildDefaultState(),
   on(resetAction, () => GameSimulator.buildDefaultState()),
-  on(beginShiftAction, state => GameSimulator.simulate(state)),
+  on(beginShiftAction, state => GameSimulator.simulate(state, 1)),
   on(closeTicketAction, (state, {workItem}) => ({
     ...state,
     closedCount: state.closedCount + 1,

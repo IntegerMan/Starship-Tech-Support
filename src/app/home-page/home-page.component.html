@@ -1,3 +1,7 @@
 <h1>Status</h1>
 
-<p>This page will contain a list of status updates and an overview of the ship, its systems, and its crew</p>
+<div>
+  <ul>
+    <li *ngFor="let msg of updates$ | async">{{msg.subject}}</li>
+  </ul>
+</div>

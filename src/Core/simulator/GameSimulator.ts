@@ -6,13 +6,28 @@ import {CrewMember} from '../Models/crew/CrewMember';
 import {Gender} from '../Models/crew/Gender';
 import {Department} from '../Models/Department';
 import {Rank} from '../Models/crew/Rank';
+import {GameMessage} from '../Models/GameMessage';
+import {MessageType} from '../Models/MessageType';
 
 export class GameSimulator {
-  public static simulate(state: GameState): GameState {
+  public static simulate(state: GameState, elapsedTime: number): GameState {
     const newState = {... state};
 
-    const elapsedTime = 5;
-    newState.time = state.time.increment(elapsedTime);
+    const time = state.time.increment(elapsedTime);
+    newState.time = time;
+
+    const messages: GameMessage[] = []; // This maybe should just slice the existing array
+    for (const crewMember of state.crew) {
+      const message: GameMessage = {
+        createdTime: time,
+        subject: `${crewMember.fullName} idles`,
+        description: `${crewMember.fullName} has nothing to do and waits for something new to work on.`,
+        fromCrewId: crewMember.id,
+        messageType: MessageType.crewUpdate,
+      };
+      messages.push(message);
+    }
+    newState.messages = messages;
 
     return newState;
   }
@@ -33,7 +48,8 @@ export class GameSimulator {
         new CrewMember(6, 'Nelson', 'Bighetti', Gender.male, Rank.crewmanRecruit, Department.science),
         new CrewMember(7, 'Jian', 'Yang', Gender.male, Rank.crewmanRecruit, Department.tactical),
       ],
-      systems: []
+      systems: [],
+      messages: [],
     };
 
   }

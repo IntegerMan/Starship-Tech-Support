@@ -4,7 +4,6 @@ import {Person} from './Person';
 import {Gender} from './Gender';
 
 export class CrewMember extends Person {
-
   constructor(id: number, firstName: string, lastName: string, gender: Gender, rank: Rank, department: Department) {
     super(id, firstName, lastName, gender);
     this.rank = rank;
