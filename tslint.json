@@ -9,6 +9,13 @@
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
+    "variable-name": [
+      false,
+      "allow-leading-underscore",
+      "allow-pascal-case",
+      "ban-keywords",
+      "check-format"
+    ],
     "directive-selector": [
       true,
       "attribute",

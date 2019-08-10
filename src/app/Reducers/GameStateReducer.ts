@@ -1,7 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import {ArrayHelpers} from '../../helpers/ArrayHelpers';
 import {beginShiftAction, closeTicketAction, resetAction} from './GameStateActions';
-import {GameSimulator} from '../../Core/simulator/GameSimulator';
+import {GameSimulator} from '../../Core/Simulator/GameSimulator';
 
 export const gameStateReducer = createReducer(GameSimulator.buildDefaultState(),
   on(resetAction, () => GameSimulator.buildDefaultState()),

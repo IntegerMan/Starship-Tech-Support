@@ -8,26 +8,23 @@ import {Department} from '../Models/Department';
 import {Rank} from '../Models/crew/Rank';
 import {GameMessage} from '../Models/GameMessage';
 import {MessageType} from '../Models/MessageType';
+import {CrewBehaviorTree} from './CrewBehaviorTree';
+import {CrewContext} from './CrewContext';
 
 export class GameSimulator {
+
+  private static _crewBehaviorTree: CrewBehaviorTree = new CrewBehaviorTree();
+
   public static simulate(state: GameState, elapsedTime: number): GameState {
     const newState = {... state};
 
-    const time = state.time.increment(elapsedTime);
-    newState.time = time;
+    newState.time = state.time.increment(elapsedTime);
+    newState.messages = [];
 
-    const messages: GameMessage[] = []; // This maybe should just slice the existing array
-    for (const crewMember of state.crew) {
-      const message: GameMessage = {
-        createdTime: time,
-        subject: `${crewMember.fullName} idles`,
-        description: `${crewMember.fullName} has nothing to do and waits for something new to work on.`,
-        fromCrewId: crewMember.id,
-        messageType: MessageType.crewUpdate,
-      };
-      messages.push(message);
+    for (const crewMember of newState.crew) {
+      const crewContext: CrewContext = new CrewContext(newState, crewMember);
+      GameSimulator._crewBehaviorTree.evaluate(crewContext);
     }
-    newState.messages = messages;
 
     return newState;
   }
@@ -35,7 +32,8 @@ export class GameSimulator {
   public static buildDefaultState(): GameState {
     return {
       openTickets: [
-        new WorkItem('The Web Site is Down', 1, WorkItemType.incident, 1)
+        new WorkItem('The Web Site is Down', 1, WorkItemType.incident, 1),
+        new WorkItem('The hovercraft is full of eels', 2, WorkItemType.incident, 1)
       ],
       closedCount: 0,
       time: new GameTime(8, 4, 2422, 3, 20),
