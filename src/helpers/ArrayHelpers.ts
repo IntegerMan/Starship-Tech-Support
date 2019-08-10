@@ -20,4 +20,8 @@ export class ArrayHelpers {
     console.debug('Removed from index ' + index, cloned);
     return cloned;
   }
+
+  public static clone<T>(items: T[]): T[] {
+    return items.map(i => ({...i}));
+  }
 }

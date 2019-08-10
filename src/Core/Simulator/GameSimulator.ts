@@ -6,20 +6,21 @@ import {CrewMember} from '../Models/crew/CrewMember';
 import {Gender} from '../Models/crew/Gender';
 import {Department} from '../Models/Department';
 import {Rank} from '../Models/crew/Rank';
-import {GameMessage} from '../Models/GameMessage';
-import {MessageType} from '../Models/MessageType';
 import {CrewBehaviorTree} from './CrewBehaviorTree';
 import {CrewContext} from './CrewContext';
+import {ArrayHelpers} from '../../helpers/ArrayHelpers';
 
 export class GameSimulator {
 
   private static _crewBehaviorTree: CrewBehaviorTree = new CrewBehaviorTree();
 
   public static simulate(state: GameState, elapsedTime: number): GameState {
-    const newState = {... state};
-
-    newState.time = state.time.increment(elapsedTime);
-    newState.messages = [];
+    const newState = {
+      ... state,
+      time: state.time.increment(elapsedTime),
+      messages: ArrayHelpers.clone(state.messages),
+      openTickets: ArrayHelpers.clone(state.openTickets)
+    };
 
     for (const crewMember of newState.crew) {
       const crewContext: CrewContext = new CrewContext(newState, crewMember);

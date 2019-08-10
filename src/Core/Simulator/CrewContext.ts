@@ -8,7 +8,11 @@ export class CrewContext {
 
   }
 
-  public addMessage(subject: string, description: string): void {
+  public addMessage(subject: string, description?: string): void {
+    if (!description) {
+      description = '';
+    }
+
     const message: GameMessage = {
       subject,
       description,

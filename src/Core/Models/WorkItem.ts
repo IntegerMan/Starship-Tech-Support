@@ -11,7 +11,7 @@ export class WorkItem {
 
   public id: number;
   public title: string;
-  public assignedCrewId: number;
+  public assignedCrewId: number = 0;
   public systemId: number;
   public type: WorkItemType;
 }
