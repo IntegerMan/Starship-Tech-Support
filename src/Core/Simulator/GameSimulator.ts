@@ -1,7 +1,7 @@
 import {GameState} from '../Models/GameState';
 import {GameTime} from '../Models/GameTime';
-import {WorkItem} from '../Models/WorkItem';
-import {WorkItemType} from '../Models/WorkItemType';
+import {WorkItem} from '../Models/WorkItems/WorkItem';
+import {WorkItemType} from '../Models/WorkItems/WorkItemType';
 import {CrewMember} from '../Models/crew/CrewMember';
 import {Gender} from '../Models/crew/Gender';
 import {Department} from '../Models/Department';
@@ -18,7 +18,7 @@ export class GameSimulator {
     const newState = {
       ... state,
       time: state.time.increment(elapsedTime),
-      messages: ArrayHelpers.clone(state.messages),
+      messages: [],
       openTickets: ArrayHelpers.clone(state.openTickets)
     };
 
@@ -46,10 +46,10 @@ export class GameSimulator {
         new CrewMember(4, 'Jared', 'Dunn', Gender.male, Rank.crewmanApprentice, Department.supply),
 */
         new CrewMember(5, 'Erlich', 'Bachman', Gender.male, Rank.chiefPettyOfficer, Department.medical),
-/*
-        new CrewMember(6, 'Nelson', 'Bighetti', Gender.male, Rank.crewmanRecruit, Department.science),
-        new CrewMember(7, 'Jian', 'Yang', Gender.male, Rank.crewmanRecruit, Department.tactical),
-*/
+        /*
+                new CrewMember(6, 'Nelson', 'Bighetti', Gender.male, Rank.crewmanRecruit, Department.science),
+                new CrewMember(7, 'Jian', 'Yang', Gender.male, Rank.crewmanRecruit, Department.tactical),
+        */
       ],
       systems: [],
       messages: [],

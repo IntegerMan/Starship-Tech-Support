@@ -1,4 +1,4 @@
-import {WorkItem} from './WorkItem';
+import {WorkItem} from './WorkItems/WorkItem';
 import {GameTime} from './GameTime';
 import {CrewMember} from './crew/CrewMember';
 import {ShipSystem} from './systems/ShipSystem';

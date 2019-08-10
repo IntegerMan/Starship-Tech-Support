@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {WorkItem} from '../../../Core/Models/WorkItem';
 import {GameStateStore} from '../../Reducers/GameStateStore';
-import {closeTicketAction} from '../../Reducers/GameStateActions';
+import {DisplayableWorkItem} from '../../../Core/Models/WorkItems/displayable-work.item';
 
 @Component({
   selector: 'ssit-tickets-list-page',
@@ -11,7 +10,7 @@ import {closeTicketAction} from '../../Reducers/GameStateActions';
 })
 export class TicketsListPageComponent implements OnInit {
   public closedCount$: Observable<number>;
-  public tickets$: Observable<WorkItem[]>;
+  public tickets$: Observable<DisplayableWorkItem[]>;
 
   constructor(private store: GameStateStore) {
   }
@@ -21,7 +20,12 @@ export class TicketsListPageComponent implements OnInit {
     this.closedCount$ = this.store.select(this.store.getClosedTicketsCount);
   }
 
-  onDeleteClick(ticket: WorkItem): void {
-    this.store.dispatch(closeTicketAction({workItem: ticket}));
+  getAssignmentText(wi: DisplayableWorkItem): string {
+    if (wi.assignedCrewName) {
+      return `Assigned to ${wi.assignedCrewName}`;
+    }
+    else {
+      return 'Unassigned';
+    }
   }
 }
