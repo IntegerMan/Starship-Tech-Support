@@ -1,13 +1,19 @@
 <h1>Work Items</h1>
 <p>Your department has closed {{closedCount$ | async}} work item(s)</p>
 <h2>Open Work Items</h2>
-<ejs-grid [dataSource]="tickets$ | async">
-  <e-columns>
-    <e-column field='title' headerText='Title' width=150></e-column>
-    <e-column headerText='Commands' width='50' textAlign='Center'>
-      <ng-template #template let-data>
-        <ssit-lcars-button (click)="onDeleteClick(data)" title="Close"></ssit-lcars-button>
-      </ng-template>
-    </e-column>
-  </e-columns>
-</ejs-grid>
+<!--<ejs-grid [dataSource]="tickets$ | async">-->
+<!--  <e-columns>-->
+<!--    <e-column field='title' headerText='Title' width=150></e-column>-->
+<!--    <e-column headerText='Commands' width='50' textAlign='Center'>-->
+<!--      <ng-template #template let-data>-->
+<!--        <ssit-lcars-button (click)="onDeleteClick(data)" title="Close"></ssit-lcars-button>-->
+<!--      </ng-template>-->
+<!--    </e-column>-->
+<!--  </e-columns>-->
+<!--</ejs-grid>-->
+<div class="card" *ngFor="let wi of tickets$ | async">
+  <div class="card-body">
+    <h5 class="card-title">{{wi.id}}: {{wi.title}}</h5>
+    <a href="#" class="card-link">Details</a>
+  </div>
+</div>
