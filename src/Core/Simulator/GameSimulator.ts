@@ -33,8 +33,8 @@ export class GameSimulator {
   public static buildDefaultState(): GameState {
     return {
       openTickets: [
-        new WorkItem('The Web Site is Down', 1, WorkItemType.incident, 1),
-        new WorkItem('The hovercraft is full of eels', 2, WorkItemType.incident, 1)
+        new WorkItem('The Web Site is Down', 1),
+        new WorkItem('The hovercraft is full of eels', 2)
       ],
       closedCount: 0,
       time: new GameTime(8, 4, 2422, 3, 20),
