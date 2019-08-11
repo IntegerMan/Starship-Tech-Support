@@ -4,10 +4,16 @@
   "author": "Matt Eland",
   "license": "UNLICENSED",
   "version": "0.0.0",
+  "repository": {
+    "type": "Git",
+    "url": "https://github.com/IntegerMan/Starship-Tech-Support"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "deploy": "ng build --prod --output-path docs --base-href Starship-Tech-Support",
+    "predocs": "ng build --prod",
+    "docs": "ngh --dir=dist/docs",
     "build": "ng build",
     "test": "jest --coverage",
     "lint": "ng lint"

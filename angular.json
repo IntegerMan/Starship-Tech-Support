@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "StarshipIt": {
+    "StarshipTechSupport": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/StarshipIt",
+            "outputPath": "dist/docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "StarshipIt:build"
+            "browserTarget": "StarshipTechSupport:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "StarshipIt:build:production"
+              "browserTarget": "StarshipTechSupport:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "StarshipIt:build"
+            "browserTarget": "StarshipTechSupport:build"
           }
         },
         "test": {
@@ -117,5 +117,5 @@
       }
     }
   },
-  "defaultProject": "StarshipIt"
+  "defaultProject": "StarshipTechSupport"
 }
