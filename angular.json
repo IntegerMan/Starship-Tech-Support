@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/styles.styl",
-              "src/stylus/lcars.styl"
             ],
             "scripts": []
           },
@@ -95,7 +94,6 @@
             ],
             "styles": [
               "src/styles.styl",
-              "src/stylus/lcars.styl"
             ],
             "scripts": []
           }

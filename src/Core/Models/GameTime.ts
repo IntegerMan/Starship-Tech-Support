@@ -1,17 +1,10 @@
 export class GameTime {
-  constructor(month: number, day: number, year: number, hour: number, minute: number) {
-    this.month = month;
-    this.day = day;
-    this.year = year;
-    this.hour = hour;
-    this.minute = minute;
+  constructor(public month: number,
+              public day: number,
+              public year: number,
+              public hour: number,
+              public minute: number) {
   }
-
-  month: number;
-  day: number;
-  year: number;
-  hour: number;
-  minute: number;
 
   increment(numMinutes: number): GameTime {
     let min = this.minute + numMinutes;
