@@ -1,9 +1,9 @@
 import {WorkItem} from '../../Core/Models/WorkItems/WorkItem';
 import {GameState} from '../../Core/Models/GameState';
 import {CrewMember} from '../../Core/Models/crew/CrewMember';
+import {WorkItemStatus} from '../../Core/Models/WorkItems/WorkItemStatus';
 
 export class TicketViewModel {
-
   public constructor (private ticket: WorkItem, private state: GameState) {
     this.assignedCrew = state.crew.find(c => c.id && c.id === ticket.assignedCrewId);
   }
@@ -23,4 +23,26 @@ export class TicketViewModel {
   public get title(): string {
     return this.ticket.title;
   }
+
+  public get statusText(): string {
+    switch (this.ticket.status) {
+      case WorkItemStatus.new:
+        return 'New';
+      case WorkItemStatus.readyForWork:
+        return 'Ready';
+      case WorkItemStatus.inProgress:
+        return 'In Progress';
+      case WorkItemStatus.readyForReview:
+        return 'Ready for Review';
+      case WorkItemStatus.readyForTesting:
+        return 'Ready for Testing';
+      case WorkItemStatus.readyForRelease:
+        return 'Ready for Release';
+      case WorkItemStatus.released:
+        return 'Released';
+      default:
+        throw Error('Unknown status code in statusText: ' + this.ticket.status);
+    }
+  }
+
 }

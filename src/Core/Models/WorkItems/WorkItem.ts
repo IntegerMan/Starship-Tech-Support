@@ -1,17 +1,14 @@
 import {WorkItemType} from './WorkItemType';
+import {WorkItemStatus} from './WorkItemStatus';
 
 export class WorkItem {
 
-  constructor(title: string, workItemId: number, type: WorkItemType, systemId: number) {
-    this.title = title;
-    this.id = workItemId;
-    this.systemId = systemId;
-    this.type = type;
+  constructor(public title: string, public id: number) {
   }
 
-  public id: number;
-  public title: string;
   public assignedCrewId: number = 0;
-  public systemId: number;
-  public type: WorkItemType;
+  public createdByCrewId: number = 0;
+  public systemId: number = 0;
+  public type: WorkItemType = WorkItemType.incident;
+  public status: WorkItemStatus = WorkItemStatus.new;
 }

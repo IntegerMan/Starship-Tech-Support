@@ -1,15 +1,12 @@
-import {BehaviorNode} from '../../BehaviorTree/BehaviorNode';
 import {BehaviorResult} from '../../BehaviorTree/BehaviorResult';
 import {CrewContext} from '../CrewContext';
+import {CrewBehavior} from './CrewBehavior';
 
-export class IdleBehavior implements BehaviorNode<CrewContext> {
+export class IdleBehavior extends CrewBehavior {
 
   evaluate(context: CrewContext): BehaviorResult<CrewContext> {
-    context.addMessage(context.crewMember.fullName + ' idles', context.crewMember.fullName + ' idles with nothing to do.');
+    context.addMessage(`${context.crewMember.fullName} idles`, `${context.crewMember.fullName} idles with nothing to do.`);
 
-    return {
-      context,
-      selectedNode: this
-    };
+    return this.handled(context);
   }
 }
