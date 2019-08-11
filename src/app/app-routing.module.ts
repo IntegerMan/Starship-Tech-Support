@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'policies', component: PoliciesPageComponent },
   { path: 'systems', component: SystemsPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'Starship-Tech-Support', redirectTo: '/home' },
   { path: '**', component: NotFoundPageComponent }
 ];
 
