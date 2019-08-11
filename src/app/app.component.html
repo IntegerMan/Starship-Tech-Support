@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fluid">
   <!-- Navbar goes here -->
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar bg-dark navbar-dark">
     <a class="navbar-brand">Starship Tech Support</a>
     <div>
       <span class="mr-3">{{time$ | async}}</span>
@@ -10,7 +10,7 @@
 
   <!-- Page Layout here -->
   <div class="row mt-3" >
-    <div class="col-3">
+    <div class="col-3 border-right border-warning">
       <nav class="nav flex-column nav-pills nav-fill">
         <a routerLink="home" routerLinkActive="active" class="nav-link">Status</a>
         <a routerLink="crew" routerLinkActive="active" class="nav-link">Crew</a>
