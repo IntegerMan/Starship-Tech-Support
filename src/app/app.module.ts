@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {LcarsModule} from './lcars/lcars.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import {MetaReducer, StoreModule} from '@ngrx/store';
@@ -12,7 +11,6 @@ import { TicketsListPageComponent } from './tickets/tickets-list-page/tickets-li
 import {environment} from '../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {storeFreeze} from 'ngrx-store-freeze';
-import { RootSidebarComponent } from './root-sidebar/root-sidebar.component';
 import {GameStateStore} from './Reducers/GameStateStore';
 import {CrewPageComponent} from './crew/crew-page/crew-page.component';
 import { PoliciesPageComponent } from './crew/policies-page/policies-page.component';
@@ -32,7 +30,6 @@ export const metaReducers: MetaReducer[] = environment.production
     HomePageComponent,
     NotFoundPageComponent,
     TicketsListPageComponent,
-    RootSidebarComponent,
     PoliciesPageComponent,
     SystemsPageComponent,
   ],
@@ -45,7 +42,6 @@ export const metaReducers: MetaReducer[] = environment.production
     TreeViewModule,
     // Other includes
     AppRoutingModule,
-    LcarsModule,
     StoreModule.forRoot({
       game: gameStateReducer,
       router: routerReducer,
