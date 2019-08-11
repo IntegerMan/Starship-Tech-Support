@@ -11,9 +11,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "deploy": "ng build --prod --output-path docs --base-href Starship-Tech-Support",
-    "predocs": "ng build --prod",
-    "docs": "ngh --dir=dist/docs",
+    "deploy": "ng build --prod --output-path docs --base-href https://integerman.github.io/Starship-Tech-Support/",
+    "predocs": "ng run deploy",
+    "docs": "ngh --dir=docs",
     "build": "ng build",
     "test": "jest --coverage",
     "lint": "ng lint"
