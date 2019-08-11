@@ -1,9 +1,8 @@
 /* tslint:disable:no-inferrable-types */
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {beginShiftAction} from './Reducers/GameStateActions';
 import {GameStateStore} from './Reducers/GameStateStore';
 import {Observable} from 'rxjs';
-import {SidebarComponent, TreeViewComponent} from '@syncfusion/ej2-angular-navigations';
 
 @Component({
   selector: 'ssit-root',

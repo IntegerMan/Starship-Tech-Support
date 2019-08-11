@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.styl",
+              "src/styles.styl"
             ],
             "scripts": []
           },
@@ -93,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.styl",
+              "src/styles.styl"
             ],
             "scripts": []
           }
@@ -103,14 +103,19 @@
           "options": {
             "tsConfig": [
               "tsconfig.app.json",
-              "tsconfig.spec.json",
+              "tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "StarshipIt"
 }

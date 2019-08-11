@@ -1,5 +1,5 @@
 {
-  "name": "starship-it",
+  "name": "starship-tech-support",
   "description": "A computer UI based management simulation game. In spaaaaace!",
   "author": "Matt Eland",
   "license": "UNLICENSED",
@@ -7,6 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "deploy": "ng build --prod --output-path docs --base-href Starship-Tech-Support",
     "build": "ng build",
     "test": "jest --coverage",
     "lint": "ng lint"
@@ -25,6 +26,7 @@
     "@ngrx/store": "^8.2.0",
     "@ngrx/store-devtools": "^8.2.0",
     "@types/jest": "^24.0.16",
+    "angular-cli-ghpages": "^0.6.0-rc.2",
     "jest": "^24.8.0",
     "jest-preset-angular": "^7.1.1",
     "rxjs": "~6.4.0",

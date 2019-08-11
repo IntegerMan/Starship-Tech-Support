@@ -1,8 +1,12 @@
-import {createReducer, on} from '@ngrx/store';
+import {Action, createReducer, on, State} from '@ngrx/store';
 import {beginShiftAction, resetAction} from './GameStateActions';
 import {GameSimulator} from '../../Core/Simulator/GameSimulator';
 
-export const gameStateReducer = createReducer(GameSimulator.buildDefaultState(),
+const gameReducer = createReducer(GameSimulator.buildDefaultState(),
   on(resetAction, () => GameSimulator.buildDefaultState()),
   on(beginShiftAction, state => GameSimulator.simulate(state, 1)),
 );
+
+export function gameStateReducer(state: any, action: Action) {
+  return gameReducer(state, action);
+}
