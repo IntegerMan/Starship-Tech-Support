@@ -11,7 +11,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "deploy": "ng build --prod --output-path docs",
+    "deploy": "ng build --prod --output-path docs --base-href Starship-Tech-Support",
     "predocs": "ng build --prod",
     "docs": "ngh --dir=dist/docs",
     "build": "ng build",
