@@ -11,10 +11,10 @@
 <!--    </e-column>-->
 <!--  </e-columns>-->
 <!--</ejs-grid>-->
-<div class="card" *ngFor="let wi of tickets$ | async">
+<div class="card text-white bg-dark border-primary mb-2" *ngFor="let wi of tickets$ | async">
   <div class="card-body">
     <h5 class="card-title">{{wi.id}}: {{wi.title}}</h5>
-    <a href="#" class="card-link">Details</a>
-    <p class="card-text"><small class="text-muted">{{wi.assignmentText}}</small></p>
+    <a href="#" class="card-link text-primary">Details</a>
+    <p class="card-text"><small class="text-info">{{wi.assignmentText}}</small></p>
   </div>
 </div>
