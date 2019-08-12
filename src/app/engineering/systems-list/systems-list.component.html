@@ -1,0 +1,7 @@
+<h1>Systems</h1>
+<div class="card mb-2" *ngFor="let sys of systems$ | async">
+  <div class="card-body">
+    <h5 class="card-title">{{sys.id}}: {{sys.name}}</h5>
+    <a href="#" class="card-link">Details</a>
+  </div>
+</div>

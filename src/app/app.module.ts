@@ -13,11 +13,11 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {GameStateStore} from './Reducers/GameStateStore';
 import {CrewPageComponent} from './crew/crew-page/crew-page.component';
 import {PoliciesPageComponent} from './crew/policies-page/policies-page.component';
-import {SystemsPageComponent} from './systems/systems-page/systems-page.component';
-import {routerReducer, RouterState, StoreRouterConnectingModule} from '@ngrx/router-store';
+import {routerReducer} from '@ngrx/router-store';
 import { SidebarComponent } from './ui/sidebar/sidebar.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { SidebarItemComponent } from './ui/sidebar-item/sidebar-item.component';
+import {EngineeringModule} from './engineering/engineering.module';
 
 @NgModule({
   declarations: [
@@ -27,13 +27,14 @@ import { SidebarItemComponent } from './ui/sidebar-item/sidebar-item.component';
     NotFoundPageComponent,
     TicketsListPageComponent,
     PoliciesPageComponent,
-    SystemsPageComponent,
     SidebarComponent,
     NavbarComponent,
     SidebarItemComponent,
   ],
   imports: [
     BrowserModule,
+    // Features
+    EngineeringModule,
     // Other includes
     AppRoutingModule,
     StoreModule.forRoot({

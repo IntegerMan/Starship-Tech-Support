@@ -1,7 +1,6 @@
 import {GameState} from '../Models/GameState';
 import {GameTime} from '../Models/GameTime';
 import {WorkItem} from '../Models/WorkItems/WorkItem';
-import {WorkItemType} from '../Models/WorkItems/WorkItemType';
 import {CrewMember} from '../Models/crew/CrewMember';
 import {Gender} from '../Models/crew/Gender';
 import {Department} from '../Models/Department';
@@ -9,6 +8,9 @@ import {Rank} from '../Models/crew/Rank';
 import {CrewBehaviorTree} from './CrewBehaviorTree';
 import {CrewContext} from './CrewContext';
 import {ArrayHelpers} from '../../helpers/ArrayHelpers';
+import {ShipSystem} from '../Models/systems/ShipSystem';
+import {SystemType} from '../Models/systems/SystemType';
+import {Importance} from '../Models/systems/Importance';
 
 export class GameSimulator {
 
@@ -51,7 +53,13 @@ export class GameSimulator {
                 new CrewMember(7, 'Jian', 'Yang', Gender.male, Rank.crewmanRecruit, Department.tactical),
         */
       ],
-      systems: [],
+      systems: [
+        new ShipSystem(1,'Gravity Generator', Department.engineering, SystemType.service, Importance.critical),
+        new ShipSystem(2,'Point Defense Systems', Department.tactical, SystemType.hardware, Importance.high),
+        new ShipSystem(3,'Torpedo Launchers', Department.tactical, SystemType.hardware, Importance.medium),
+        new ShipSystem(4,'Carbon Dioxide Scrubbers',Department.engineering, SystemType.hardware, Importance.critical),
+        new ShipSystem(5,'Long Range Communications Processor', Department.science, SystemType.service, Importance.high),
+      ],
       messages: [],
     };
 
