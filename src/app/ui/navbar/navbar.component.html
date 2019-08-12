@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-primary border-0">
+  <a class="navbar-brand text-warning">
+    <i class="fas fa-fw fa-space-shuttle fa-rotate-270"></i>
+    Starship Tech Support
+  </a>
+  <div class="d-flex nav">
+    <a class="nav-link disabled small-caps"><small>Star Time: {{time$ | async}}</small></a>
+    <a class="nav-link text-success" style="cursor: pointer;" (click)="onBeginShiftClick()">Begin Shift</a>
+  </div>
+</nav>

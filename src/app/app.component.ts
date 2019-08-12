@@ -9,19 +9,7 @@ import {Observable} from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl']
 })
-export class AppComponent implements OnInit {
-
-  constructor(private state: GameStateStore) {
-  }
-
-  public time$: Observable<string>;
+export class AppComponent {
 
 
-  ngOnInit(): void {
-    this.time$ = this.state.select(this.state.getTime);
-  }
-
-  onBeginShiftClick() {
-    this.state.dispatch(beginShiftAction());
-  }
 }

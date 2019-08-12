@@ -9,12 +9,11 @@ import {SystemsPageComponent} from './systems/systems-page/systems-page.componen
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
-  { path: 'tickets', component: TicketsListPageComponent },
+  { path: 'ops/work', component: TicketsListPageComponent },
   { path: 'crew', component: CrewPageComponent, pathMatch: 'full' },
-  { path: 'policies', component: PoliciesPageComponent },
-  { path: 'systems', component: SystemsPageComponent },
+  { path: 'crew/policies', component: PoliciesPageComponent },
+  { path: 'engineering/systems', component: SystemsPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'Starship-Tech-Support', redirectTo: '/home' },
   { path: '**', component: NotFoundPageComponent }
 ];
 
