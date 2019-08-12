@@ -3,11 +3,12 @@
 <h2>Open Work Items</h2>
 
 <div class="card mb-2" *ngFor="let wi of tickets$ | async">
-  <div class="card-header bg-transparent border-primary">
-    <span class="badge badge-secondary">{{wi.statusText}}</span>
-  </div>
   <div class="card-body">
-    <h5 class="card-title">{{wi.id}}: {{wi.title}}</h5>
+    <h5 class="card-title">
+      {{wi.id}}: {{wi.title}}
+      <ssit-ticket-status-badge class="float-right ml-2" [status]="wi.status"></ssit-ticket-status-badge>
+      <ssit-department-badge [department]="wi.department" class="float-right"></ssit-department-badge>
+    </h5>
     <a href="#" class="card-link">Details</a>
   </div>
   <div class="card-footer bg-transparent border-primary">

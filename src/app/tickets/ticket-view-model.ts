@@ -2,6 +2,7 @@ import {WorkItem} from '../../Core/Models/WorkItems/WorkItem';
 import {GameState} from '../../Core/Models/GameState';
 import {CrewMember} from '../../Core/Models/crew/CrewMember';
 import {WorkItemStatus} from '../../Core/Models/WorkItems/WorkItemStatus';
+import {Department} from '../../Core/Models/Department';
 
 export class TicketViewModel {
   public constructor (private ticket: WorkItem, private state: GameState) {
@@ -24,8 +25,16 @@ export class TicketViewModel {
     return this.ticket.title;
   }
 
+  public get department(): Department {
+    return this.ticket.responsibleDepartment;
+  }
+
+  public get status(): WorkItemStatus {
+    return this.ticket.status;
+  }
+
   public get statusText(): string {
-    switch (this.ticket.status) {
+    switch (this.status) {
       case WorkItemStatus.new:
         return 'New';
       case WorkItemStatus.readyForWork:

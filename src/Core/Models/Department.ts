@@ -2,7 +2,7 @@ export enum Department {
   science,
   engineering,
   medical,
-  supply,
+  operations,
   tactical,
   command
 }

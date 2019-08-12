@@ -1,9 +1,10 @@
 import {WorkItemType} from './WorkItemType';
 import {WorkItemStatus} from './WorkItemStatus';
+import {Department} from '../Department';
 
 export class WorkItem {
 
-  constructor(public title: string, public id: number) {
+  constructor(public title: string, public id: number, public responsibleDepartment: Department) {
   }
 
   public assignedCrewId: number = 0;

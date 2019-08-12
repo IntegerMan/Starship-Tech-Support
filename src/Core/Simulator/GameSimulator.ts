@@ -35,8 +35,8 @@ export class GameSimulator {
   public static buildDefaultState(): GameState {
     return {
       openTickets: [
-        new WorkItem('The Web Site is Down', 1),
-        new WorkItem('The hovercraft is full of eels', 2)
+        new WorkItem('Comms array keeps playing Rick Astley', 1, Department.engineering),
+        new WorkItem('Targeting system locks on to own ship when target out of range', 2, Department.tactical)
       ],
       closedCount: 0,
       time: new GameTime(8, 4, 2422, 3, 20),
@@ -45,7 +45,7 @@ export class GameSimulator {
         new CrewMember(1, 'Richard', 'Hendricks', Gender.male, Rank.pettyOfficer3rdClass, Department.command),
         new CrewMember(2, 'Dinesh', 'Chugtai', Gender.male, Rank.crewman, Department.engineering),
         new CrewMember(3, 'Bertram', 'Gilfoyle', Gender.male, Rank.crewman, Department.engineering),
-        new CrewMember(4, 'Jared', 'Dunn', Gender.male, Rank.crewmanApprentice, Department.supply),
+        new CrewMember(4, 'Jared', 'Dunn', Gender.male, Rank.crewmanApprentice, Department.operations),
 */
         new CrewMember(5, 'Erlich', 'Bachman', Gender.male, Rank.chiefPettyOfficer, Department.medical),
         /*

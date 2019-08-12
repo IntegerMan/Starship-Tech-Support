@@ -2,19 +2,10 @@
 
 <div class="card" *ngFor="let crewman of crew$ | async">
   <div class="card-body">
-    <h5 class="card-title">{{crewman.fullName}}</h5>
+    <h5 class="card-title">
+      {{crewman.fullName}}
+      <ssit-department-badge [department]="crewman.department" class="float-right"></ssit-department-badge>
+    </h5>
     <a href="#" class="card-link">Details</a>
   </div>
 </div>
-<!--
-<ejs-grid [dataSource]="crew$ | async">
-  <e-columns>
-    <e-column field='firstName' headerText='First Name' width=150></e-column>
-    <e-column field='lastName' headerText='Last Name' width=150></e-column>
-    <e-column headerText='Commands' width='50' textAlign='Center'>
-      <ng-template #template let-data>
-      </ng-template>
-    </e-column>
-  </e-columns>
-</ejs-grid>
--->
