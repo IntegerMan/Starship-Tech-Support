@@ -1,14 +1,14 @@
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 h-100 overflow-hidden">
   <!-- Navbar goes here -->
   <ssit-navbar></ssit-navbar>
 
   <!-- Page Layout here -->
   <div class="row mt-0 border-top border-warning" >
-    <div class="col-3 col-xl-2 border-right border-warning pr-0">
+    <div class="sidebar">
       <ssit-sidebar></ssit-sidebar>
     </div>
 
-    <div class="col-9 col-xl-10 pt-2">
+    <div class="main">
       <router-outlet></router-outlet>
 
       <div class="col-12 text-muted mt-4 text-center">
