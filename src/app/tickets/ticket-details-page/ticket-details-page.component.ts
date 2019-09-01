@@ -1,10 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {WorkItem} from '../../../Core/Models/WorkItems/WorkItem';
 import {Observable, Subscription} from 'rxjs';
-import {GameState} from '../../../Core/Models/GameState';
 import {GameStateStore} from '../../Reducers/GameStateStore';
-import {select} from '@ngrx/store';
 import {TicketViewModel} from '../ticket-view-model';
 
 @Component({
@@ -14,7 +11,7 @@ import {TicketViewModel} from '../ticket-view-model';
 })
 export class TicketDetailsPageComponent implements OnInit, OnDestroy {
 
-  private ticket$: Observable<TicketViewModel>;
+  public ticket$: Observable<TicketViewModel>;
 
   private sub: Subscription | null = null;
 
