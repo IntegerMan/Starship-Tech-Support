@@ -9,7 +9,7 @@
       <ssit-ticket-status-badge class="float-right ml-2" [status]="wi.status"></ssit-ticket-status-badge>
       <ssit-department-badge [department]="wi.department" class="float-right"></ssit-department-badge>
     </h5>
-    <a href="#" class="card-link">Details</a>
+    <a href="#" class="card-link" routerLink="{{wi.id}}">Details</a>
   </div>
   <div class="card-footer bg-transparent border-primary">
     <p class="card-text"><small class="text-muted">{{wi.assignmentText}}</small></p>

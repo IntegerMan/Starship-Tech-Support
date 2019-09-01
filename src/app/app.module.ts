@@ -21,6 +21,7 @@ import { DepartmentBadgeComponent } from './ui/department-badge/department-badge
 import {SystemsListComponent} from './engineering/systems-list/systems-list.component';
 import { TicketStatusBadgeComponent } from './tickets/ticket-status-badge/ticket-status-badge.component';
 import { NotImplementedPageComponent } from './ui/not-implemented-page/not-implemented-page.component';
+import { TicketDetailsPageComponent } from './tickets/ticket-details-page/ticket-details-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NotImplementedPageComponent } from './ui/not-implemented-page/not-imple
     SystemsListComponent,
     TicketStatusBadgeComponent,
     NotImplementedPageComponent,
+    TicketDetailsPageComponent,
   ],
   imports: [
     BrowserModule,

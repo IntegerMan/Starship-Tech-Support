@@ -1,0 +1,12 @@
+<div *ngIf="ticket$ | async as ticket" class="card">
+  <div class="card-body" >
+    <h5 class="card-title">
+      {{ticket.id}}: {{ticket.title}}
+      <ssit-ticket-status-badge class="float-right ml-2" [status]="ticket.status"></ssit-ticket-status-badge>
+      <ssit-department-badge [department]="ticket.department" class="float-right"></ssit-department-badge>
+    </h5>
+  </div>
+  <div class="card-footer bg-transparent border-primary">
+    <p class="card-text"><small class="text-muted">{{ticket.assignmentText}}</small></p>
+  </div>
+</div>
