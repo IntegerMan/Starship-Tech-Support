@@ -4,7 +4,7 @@ import {Department} from '../Department';
 
 export class WorkItem {
 
-  constructor(public title: string, public id: number, public responsibleDepartment: Department) {
+  constructor(public title: string, public id: number, public department: Department) {
   }
 
   public assignedCrewId: number = 0;

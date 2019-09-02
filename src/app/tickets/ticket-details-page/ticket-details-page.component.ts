@@ -16,7 +16,6 @@ export class TicketDetailsPageComponent implements OnInit, OnDestroy {
   private sub: Subscription | null = null;
 
   constructor(private state: GameStateStore, private route: ActivatedRoute) {
-    console.debug('Constructed');
   }
 
   ngOnInit() {

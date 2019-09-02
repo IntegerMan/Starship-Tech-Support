@@ -22,6 +22,9 @@ import {SystemsListComponent} from './engineering/systems-list/systems-list.comp
 import { TicketStatusBadgeComponent } from './tickets/ticket-status-badge/ticket-status-badge.component';
 import { NotImplementedPageComponent } from './ui/not-implemented-page/not-implemented-page.component';
 import { TicketDetailsPageComponent } from './tickets/ticket-details-page/ticket-details-page.component';
+import { CrewDetailsPageComponent } from './crew/crew-details-page/crew-details-page.component';
+import { CrewLinkComponent } from './crew/crew-link/crew-link.component';
+import { TicketsGridComponent } from './tickets/tickets-grid/tickets-grid.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { TicketDetailsPageComponent } from './tickets/ticket-details-page/ticket
     TicketStatusBadgeComponent,
     NotImplementedPageComponent,
     TicketDetailsPageComponent,
+    CrewDetailsPageComponent,
+    CrewLinkComponent,
+    TicketsGridComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
     this.time$ = this.state.select(this.state.getTime);
   }
 
-  onBeginShiftClick() {
+  public onBeginShiftClick(): void {
     this.state.dispatch(beginShiftAction());
   }
 }

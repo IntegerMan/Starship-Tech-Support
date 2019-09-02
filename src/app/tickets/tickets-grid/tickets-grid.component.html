@@ -1,0 +1,19 @@
+<table class="table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Title</th>
+    <th scope="col">Status</th>
+    <th scope="col">Department</th>
+    <th *ngIf="includeAssignedTo" scope="col">Assigned To</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let wi of tickets" routerLink="/ops/work/{{wi.id}}" class="pointer" title="View Details">
+    <th scope="row">{{wi.id}}</th>
+    <td><a routerLink="/ops/work/{{wi.id}}">{{wi.title}}</a></td>
+    <td><ssit-ticket-status-badge [status]="wi.status"></ssit-ticket-status-badge></td>
+    <td><ssit-department-badge [department]="wi.department"></ssit-department-badge></td>
+    <td *ngIf="includeAssignedTo"><ssit-crew-link [crew]="wi.assignedCrew"></ssit-crew-link></td>
+  </tr>
+  </tbody>

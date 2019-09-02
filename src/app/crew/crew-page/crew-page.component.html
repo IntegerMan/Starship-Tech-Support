@@ -1,11 +1,24 @@
 <h1>Crew</h1>
 
-<div class="card" *ngFor="let crewman of crew$ | async">
-  <div class="card-body">
-    <h5 class="card-title">
-      {{crewman.fullName}}
-      <ssit-department-badge [department]="crewman.department" class="float-right"></ssit-department-badge>
-    </h5>
-    <a href="#" class="card-link">Details</a>
-  </div>
-</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Crew</li>
+  </ol>
+</nav>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Department</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let crewman of crew$ | async" routerLink="{{crewman.id}}" class="pointer" title="View Details">
+    <th scope="row">{{crewman.id}}</th>
+    <td><a [routerLink]="crewman.id">{{crewman.fullName}}</a></td>
+    <td><ssit-department-badge [department]="crewman.department"></ssit-department-badge></td>
+  </tr>
+  </tbody>
+</table>

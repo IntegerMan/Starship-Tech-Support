@@ -9,7 +9,7 @@ export class TicketViewModel {
     this.assignedCrew = state.crew.find(c => c.id && c.id === ticket.assignedCrewId);
   }
 
-  private readonly assignedCrew: CrewMember | null;
+  public readonly assignedCrew: CrewMember | null;
 
   public get assignmentText(): string {
     return this.assignedCrew
@@ -26,7 +26,7 @@ export class TicketViewModel {
   }
 
   public get department(): Department {
-    return this.ticket.responsibleDepartment;
+    return this.ticket.department;
   }
 
   public get status(): WorkItemStatus {

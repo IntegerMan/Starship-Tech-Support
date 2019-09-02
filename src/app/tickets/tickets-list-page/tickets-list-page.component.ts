@@ -19,4 +19,5 @@ export class TicketsListPageComponent implements OnInit {
     this.tickets$ = this.store.select(this.store.getOpenTickets);
     this.closedCount$ = this.store.select(this.store.getClosedTicketsCount);
   }
+
 }

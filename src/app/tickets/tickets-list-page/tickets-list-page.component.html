@@ -1,17 +1,10 @@
-<h1>Work Items</h1>
-<p>Your department has closed {{closedCount$ | async}} work item(s)</p>
-<h2>Open Work Items</h2>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Work Items</li>
+  </ol>
+</nav>
 
-<div class="card mb-2" *ngFor="let wi of tickets$ | async">
-  <div class="card-body">
-    <h5 class="card-title">
-      {{wi.id}}: {{wi.title}}
-      <ssit-ticket-status-badge class="float-right ml-2" [status]="wi.status"></ssit-ticket-status-badge>
-      <ssit-department-badge [department]="wi.department" class="float-right"></ssit-department-badge>
-    </h5>
-    <a href="#" class="card-link" routerLink="{{wi.id}}">Details</a>
-  </div>
-  <div class="card-footer bg-transparent border-primary">
-    <p class="card-text"><small class="text-muted">{{wi.assignmentText}}</small></p>
-  </div>
-</div>
+<p>Your department has closed <span class="badge badge-info">{{closedCount$ | async}}</span> work item(s)</p>
+
+<h2>Open Work Items</h2>
+<ssit-tickets-grid [tickets]="tickets$ | async"></ssit-tickets-grid>

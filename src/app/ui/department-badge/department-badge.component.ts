@@ -9,7 +9,7 @@ import {Department} from '../../../Core/Models/Department';
 export class DepartmentBadgeComponent {
 
   @Input()
-  department: Department;
+  public department: Department;
 
   public getDepartmentName(department: Department): string {
     switch (department) {

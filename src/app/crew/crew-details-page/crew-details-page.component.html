@@ -1,0 +1,28 @@
+<div *ngIf="crewman$ | async as crewman">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/crew">Crew</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{crewman.fullName}}</li>
+    </ol>
+  </nav>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{crewman.fullName}}
+        <ssit-department-badge [department]="crewman.department" class="float-right"></ssit-department-badge>
+      </h5>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <div *ngIf="crewman.hasAssignedTickets">
+      <h2>Open Work Items</h2>
+      <ssit-tickets-grid [tickets]="crewman.assignedTickets" [includeAssignedTo]="false"></ssit-tickets-grid>
+    </div>
+    <div *ngIf="!crewman.hasAssignedTickets" class="alert alert-warning">
+      This crew member does not have any currently assigned work items.
+    </div>
+  </div>
+</div>
