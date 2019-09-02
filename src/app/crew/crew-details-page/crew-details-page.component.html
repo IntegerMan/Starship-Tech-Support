@@ -17,12 +17,27 @@
   </div>
 
   <div class="mt-3">
+    <h2>Work Items</h2>
     <div *ngIf="crewman.hasAssignedTickets">
-      <h2>Open Work Items</h2>
       <ssit-tickets-grid [tickets]="crewman.assignedTickets" [includeAssignedTo]="false"></ssit-tickets-grid>
     </div>
-    <div *ngIf="!crewman.hasAssignedTickets" class="alert alert-warning">
+    <div *ngIf="!crewman.hasAssignedTickets" class="text-warning">
       This crew member does not have any currently assigned work items.
     </div>
   </div>
+
+  <div class="mt-3">
+    <h2>Priorities</h2>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>Triage Work Items</span>
+        <ssit-priority-picker [value]="3"></ssit-priority-picker>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>Fix Defects</span>
+        <ssit-priority-picker [value]="0"></ssit-priority-picker>
+      </li>
+    </ul>
+  </div>
+
 </div>

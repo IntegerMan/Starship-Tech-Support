@@ -1,0 +1,12 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item pointer" [class.active]="value<=0" (click)="onValueClick(0)"><a class="page-link">Disabled</a></li>
+    <li class="page-item text-info ml-3 mr-2 mt-1"><small>Low</small></li>
+    <li class="page-item pointer" [class.active]="value === 1"  (click)="onValueClick(1)"><a class="page-link">1</a></li>
+    <li class="page-item pointer" [class.active]="value === 2" (click)="onValueClick(2)"><a class="page-link">2</a></li>
+    <li class="page-item pointer" [class.active]="value === 3" (click)="onValueClick(3)"><a class="page-link">3</a></li>
+    <li class="page-item pointer" [class.active]="value === 4" (click)="onValueClick(4)"><a class="page-link">4</a></li>
+    <li class="page-item pointer" [class.active]="value === 5" (click)="onValueClick(5)"><a class="page-link">5</a></li>
+    <li class="page-item text-danger ml-2 mr-0 mt-1"><small>High</small></li>
+  </ul>
+</nav>

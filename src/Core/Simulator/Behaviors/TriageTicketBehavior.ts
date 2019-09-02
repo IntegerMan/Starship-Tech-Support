@@ -5,8 +5,6 @@ import {WorkItemStatus} from '../../Models/WorkItems/WorkItemStatus';
 
 export class TriageTicketBehavior extends CrewBehavior {
   public evaluate(context: CrewContext): BehaviorResult<CrewContext> {
-
-    console.debug('evaluating triage', context.state.openTickets);
     const items = context.state.openTickets.filter(t => t.assignedCrewId === context.crewMember.id && t.status === WorkItemStatus.new);
 
     if (items.length <= 0) {

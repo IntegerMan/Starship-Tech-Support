@@ -25,6 +25,7 @@ import { TicketDetailsPageComponent } from './tickets/ticket-details-page/ticket
 import { CrewDetailsPageComponent } from './crew/crew-details-page/crew-details-page.component';
 import { CrewLinkComponent } from './crew/crew-link/crew-link.component';
 import { TicketsGridComponent } from './tickets/tickets-grid/tickets-grid.component';
+import { PriorityPickerComponent } from './ui/priority-picker/priority-picker.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { TicketsGridComponent } from './tickets/tickets-grid/tickets-grid.compon
     CrewDetailsPageComponent,
     CrewLinkComponent,
     TicketsGridComponent,
+    PriorityPickerComponent,
   ],
   imports: [
     BrowserModule,
