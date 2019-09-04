@@ -1,4 +1,5 @@
-<a [routerLink]="target" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item {{textClass}}">
+<a [routerLink]="target" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+   class="list-group-item {{textClass}}" [class.disabled]="isDisabled">
   <i class="fas fa-fw {{icon}}"></i>
   <span class="ml-2">
     <ng-content></ng-content>

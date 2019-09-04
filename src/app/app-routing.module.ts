@@ -14,8 +14,9 @@ const routes: Routes = [
   { path: 'ops/work', component: TicketsListPageComponent },
   { path: 'ops/work/:id', component: TicketDetailsPageComponent },
   { path: 'crew', component: CrewPageComponent, pathMatch: 'full' },
-  { path: 'crew/:id', component: CrewDetailsPageComponent },
-  { path: 'crew/policies', component: PoliciesPageComponent },
+  { path: 'crew/policies', component: PoliciesPageComponent, pathMatch: 'full' },
+  { path: 'crew/management', component: NotImplementedPageComponent, pathMatch: 'full' },
+  { path: 'crew/member/:id', component: CrewDetailsPageComponent, pathMatch: 'full' },
   { path: 'engineering/systems', component: SystemsListComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotImplementedPageComponent }
@@ -23,7 +24,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {enableTracing: false}),
   ],
   exports: [RouterModule]
 })

@@ -11,13 +11,11 @@ export class ArrayHelpers {
     const cloned = collection.slice(0);
 
     if (index < 0) {
-      console.debug('Could not find element', item, cloned);
       return cloned;
     }
 
     cloned.splice(index, 1);
 
-    console.debug('Removed from index ' + index, cloned);
     return cloned;
   }
 

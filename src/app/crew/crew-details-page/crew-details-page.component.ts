@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
-import {CrewMember} from '../../../Core/Models/crew/CrewMember';
 import {GameStateStore} from '../../Reducers/GameStateStore';
 import {ActivatedRoute} from '@angular/router';
 import {CrewMemberViewModel} from '../CrewMemberViewModel';
+import {SkillViewModel} from '../skill-view-model';
+import {changePriorityAction} from '../../Reducers/GameStateActions';
 
 @Component({
   selector: 'ssit-crew-details-page',
@@ -33,4 +34,7 @@ export class CrewDetailsPageComponent implements OnInit {
     }
   }
 
+  public onSkillChanged(crewman: CrewMemberViewModel, skill: SkillViewModel, newValue: number): void {
+    this.state.dispatch(changePriorityAction({crewId: crewman.id, skill: skill.skill, newPriority: newValue}))
+  }
 }

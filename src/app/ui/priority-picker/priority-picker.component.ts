@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'ssit-priority-picker',
@@ -10,12 +10,18 @@ export class PriorityPickerComponent implements OnInit {
   @Input()
   public value: number = 3;
 
+  @Output()
+  public valueChanged = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
   public onValueClick(selectedValue: number): void {
-    this.value = selectedValue;
+    if (this.value !== selectedValue) {
+      this.value = selectedValue;
+      this.valueChanged.emit(selectedValue);
+    }
   }
 }

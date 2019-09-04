@@ -2,7 +2,7 @@ import {GameState} from '../../Core/Models/GameState';
 import {CrewMember} from '../../Core/Models/crew/CrewMember';
 import {Department} from '../../Core/Models/Department';
 import {WorkItem} from '../../Core/Models/WorkItems/WorkItem';
-import {TicketViewModel} from '../tickets/ticket-view-model';
+import {SkillViewModel} from './skill-view-model';
 
 export class CrewMemberViewModel {
 
@@ -20,12 +20,24 @@ export class CrewMemberViewModel {
     return this.crewMember.department;
   }
 
-  public get id(): string {
-    return this.crewMember.id.toString();
+  public get id():  number {
+    return this.crewMember.id;
   }
 
   public get fullName(): string {
     return this.crewMember.fullName;
+  }
+
+  public get skills(): SkillViewModel[] {
+    const skills: SkillViewModel[] = [];
+
+    let skillVM: SkillViewModel;
+    for (const skill of this.crewMember.skills) {
+      skillVM = new SkillViewModel(skill.skill, skill.level, skill.priority);
+      skills.push(skillVM);
+    }
+
+    return skills;
   }
 
 }

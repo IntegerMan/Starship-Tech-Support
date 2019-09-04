@@ -15,9 +15,9 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let crewman of crew$ | async" routerLink="{{crewman.id}}" class="pointer" title="View Details">
+  <tr *ngFor="let crewman of crew$ | async" routerLink="/crew/member/{{crewman.id}}" class="pointer" title="View Details">
     <th scope="row">{{crewman.id}}</th>
-    <td><a [routerLink]="crewman.id">{{crewman.fullName}}</a></td>
+    <td><a routerLink="/crew/member/{{crewman.id}}">{{crewman.fullName}}</a></td>
     <td><ssit-department-badge [department]="crewman.department"></ssit-department-badge></td>
   </tr>
   </tbody>

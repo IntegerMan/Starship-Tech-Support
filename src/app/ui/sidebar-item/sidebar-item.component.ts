@@ -11,6 +11,9 @@ export class SidebarItemComponent implements OnInit {
   icon: string = 'fa-biohazard';
 
   @Input()
+  isDisabled: boolean = false;
+
+  @Input()
   textClass: string = '';
 
   @Input()

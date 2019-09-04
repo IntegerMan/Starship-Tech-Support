@@ -7,39 +7,41 @@
 
   <ssit-sidebar-item target="crew" icon="fa-users" textClass="text-success">Crew</ssit-sidebar-item>
   <div class="list-group">
-    <ssit-sidebar-item target="crew/schedule" icon="fa-calendar">Schedule</ssit-sidebar-item>
-    <ssit-sidebar-item target="crew/policies" icon="fa-check-circle">Policies</ssit-sidebar-item>
-    <ssit-sidebar-item target="crew/management" icon="fa-user-cog">Management</ssit-sidebar-item>
+    <ssit-sidebar-item target="crew/schedule" icon="fa-calendar" [isDisabled]="false">Schedule</ssit-sidebar-item>
+    <ssit-sidebar-item target="crew/policies" icon="fa-check-circle" [isDisabled]="false">Policies</ssit-sidebar-item>
+    <ssit-sidebar-item target="crew/management" icon="fa-user-cog" [isDisabled]="false">Management</ssit-sidebar-item>
   </div>
 
   <div class="sidebar-divider"></div>
 
+  <!--
   <ssit-sidebar-item target="ops" icon="fa-sitemap" textClass="text-warning">Operations</ssit-sidebar-item>
   <div class="list-group">
-    <ssit-sidebar-item target="ops/nav" icon="fa-map">Navigation</ssit-sidebar-item>
-    <ssit-sidebar-item target="ops/tactical" icon="fa-crosshairs">Tactical</ssit-sidebar-item>
-    <ssit-sidebar-item target="ops/flight" icon="fa-rocket">Flight Ops</ssit-sidebar-item>
-    <ssit-sidebar-item target="ops/supply" icon="fa-boxes">Supply</ssit-sidebar-item>
+    <ssit-sidebar-item target="ops/nav" icon="fa-map" [isDisabled]="true">Navigation</ssit-sidebar-item>
+    <ssit-sidebar-item target="ops/tactical" icon="fa-crosshairs" [isDisabled]="true">Tactical</ssit-sidebar-item>
+    <ssit-sidebar-item target="ops/flight" icon="fa-rocket" [isDisabled]="true">Flight Ops</ssit-sidebar-item>
+    <ssit-sidebar-item target="ops/supply" icon="fa-boxes" [isDisabled]="true">Supply</ssit-sidebar-item>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <ssit-sidebar-item target="engineering" icon="fa-tools" textClass="text-danger">Engineering</ssit-sidebar-item>
   <div class="list-group">
-    <ssit-sidebar-item target="engineering/systems" icon="fa-server">Systems</ssit-sidebar-item>
-    <ssit-sidebar-item target="engineering/power" icon="fa-bolt">Power</ssit-sidebar-item>
-    <ssit-sidebar-item target="engineering/lifesupport" icon="fa-user-astronaut">Life Support</ssit-sidebar-item>
+    <ssit-sidebar-item target="engineering/systems" icon="fa-server" [isDisabled]="true">Systems</ssit-sidebar-item>
+    <ssit-sidebar-item target="engineering/power" icon="fa-bolt" [isDisabled]="true">Power</ssit-sidebar-item>
+    <ssit-sidebar-item target="engineering/lifesupport" icon="fa-user-astronaut" [isDisabled]="true">Life Support</ssit-sidebar-item>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <ssit-sidebar-item target="science" icon="fa-microscope" textClass="text-info">Science</ssit-sidebar-item>
   <div class="list-group">
-    <ssit-sidebar-item target="science/scan" icon="fa-satellite-dish">Scanner</ssit-sidebar-item>
-    <ssit-sidebar-item target="science/research" icon="fa-flask">Research</ssit-sidebar-item>
-    <ssit-sidebar-item target="science/medical" icon="fa-procedures">Medical</ssit-sidebar-item>
+    <ssit-sidebar-item target="science/scan" icon="fa-satellite-dish" [isDisabled]="true">Scanner</ssit-sidebar-item>
+    <ssit-sidebar-item target="science/research" icon="fa-flask" [isDisabled]="true">Research</ssit-sidebar-item>
+    <ssit-sidebar-item target="science/medical" icon="fa-procedures" [isDisabled]="true">Medical</ssit-sidebar-item>
   </div>
 
   <div class="sidebar-divider"></div>
+  -->
 
 </div>
