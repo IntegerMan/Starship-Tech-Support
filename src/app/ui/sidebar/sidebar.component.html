@@ -6,13 +6,16 @@
   <div class="sidebar-divider"></div>
 
   <ssit-sidebar-item target="crew" icon="fa-users" textClass="text-success">Crew</ssit-sidebar-item>
+  <ssit-crew-list-sidebar-group *ngFor="let department of departments" [department]="department"></ssit-crew-list-sidebar-group>
+<!--
   <div class="list-group">
     <ssit-sidebar-item target="crew/schedule" icon="fa-calendar" [isDisabled]="false">Schedule</ssit-sidebar-item>
     <ssit-sidebar-item target="crew/policies" icon="fa-check-circle" [isDisabled]="false">Policies</ssit-sidebar-item>
     <ssit-sidebar-item target="crew/management" icon="fa-user-cog" [isDisabled]="false">Management</ssit-sidebar-item>
   </div>
-
   <div class="sidebar-divider"></div>
+-->
+
 
   <!--
   <ssit-sidebar-item target="ops" icon="fa-sitemap" textClass="text-warning">Operations</ssit-sidebar-item>

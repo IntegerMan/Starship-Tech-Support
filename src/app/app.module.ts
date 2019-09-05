@@ -26,6 +26,7 @@ import { CrewDetailsPageComponent } from './crew/crew-details-page/crew-details-
 import { CrewLinkComponent } from './crew/crew-link/crew-link.component';
 import { TicketsGridComponent } from './tickets/tickets-grid/tickets-grid.component';
 import { PriorityPickerComponent } from './ui/priority-picker/priority-picker.component';
+import { CrewListSidebarGroupComponent } from './crew/crew-list-sidebar-group/crew-list-sidebar-group.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { PriorityPickerComponent } from './ui/priority-picker/priority-picker.co
     CrewLinkComponent,
     TicketsGridComponent,
     PriorityPickerComponent,
+    CrewListSidebarGroupComponent,
   ],
   imports: [
     BrowserModule,

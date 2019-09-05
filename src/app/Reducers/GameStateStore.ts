@@ -3,6 +3,7 @@ import {GameState} from '../../Core/Models/GameState';
 import {TicketViewModel} from '../tickets/ticket-view-model';
 import {WorkItem} from '../../Core/Models/WorkItems/WorkItem';
 import {CrewMemberViewModel} from '../crew/CrewMemberViewModel';
+import {Department} from '../../Core/Models/Department';
 
 const gameSelector = createFeatureSelector<GameState>('game');
 
@@ -12,6 +13,11 @@ export class GameStateStore extends Store<GameState> {
 
   public readonly getCrewMembers = createSelector(gameSelector, (state: GameState) =>
     state.crew.map(c => new CrewMemberViewModel(c, state)));
+
+  public readonly getCrewMembersInDepartment = (department: Department) =>
+    createSelector(gameSelector, (state: GameState) => {
+      return state.crew.filter(c => c.department === department).map(c => new CrewMemberViewModel(c, state));
+    });
 
   public readonly getTime = createSelector(gameSelector, (state: GameState) => state.time.text);
   public readonly getUpdates = createSelector(gameSelector, (state: GameState) => state.messages);

@@ -1,0 +1,5 @@
+<ssit-sidebar-item [icon]="getDepartmentIcon()" target="/crew" [textClass]="getDepartmentClass()">{{getDepartmentName()}}</ssit-sidebar-item>
+<div class="list-group">
+  <ssit-sidebar-item *ngFor="let crew of crew$ | async" target="crew/member/{{crew.id}}" icon="fa-user"  [textClass]="getDepartmentClass()">{{crew.fullName}}</ssit-sidebar-item>
+</div>
+<div class="sidebar-divider"></div>
