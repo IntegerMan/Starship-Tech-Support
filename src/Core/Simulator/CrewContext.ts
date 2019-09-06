@@ -4,7 +4,7 @@ import {GameMessage} from '../Models/GameMessage';
 import {MessageType} from '../Models/MessageType';
 
 export class CrewContext {
-  public constructor(public state: GameState, public crewMember: CrewMember) {
+  public constructor(public state: GameState, public crewMember: CrewMember, public priority: number) {
 
   }
 

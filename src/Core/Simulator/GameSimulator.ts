@@ -25,9 +25,15 @@ export class GameSimulator {
     };
 
     for (const crewMember of newState.crew) {
-      const crewContext: CrewContext = new CrewContext(newState, crewMember);
-      GameSimulator._crewBehaviorTree.evaluate(crewContext);
-    }
+      for (let priority = 5; priority >= 1; priority--) {
+        const crewContext: CrewContext = new CrewContext(newState, crewMember, priority);
+        const result = GameSimulator._crewBehaviorTree.evaluate(crewContext);
+        if (result.selectedNode) {
+          break;
+        }
+      }
+
+  }
 
     return newState;
   }

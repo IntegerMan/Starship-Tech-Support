@@ -50,4 +50,8 @@ export class CrewMember extends Person {
   public clone(): CrewMember {
     return new CrewMember(this.id, this.firstName, this.lastName, this.gender, this.rank, this.department);
   }
+
+  getSkill(desired: Skill): CrewSkill | undefined {
+    return this.skills.find(s => s.skill === desired);
+  }
 }

@@ -2,9 +2,13 @@ import {CrewContext} from '../CrewContext';
 import {BehaviorResult} from '../../BehaviorTree/BehaviorResult';
 import {CrewBehavior} from './CrewBehavior';
 import {WorkItemStatus} from '../../Models/WorkItems/WorkItemStatus';
+import {Skill} from '../../Models/skill';
 
 export class TriageTicketBehavior extends CrewBehavior {
   public evaluate(context: CrewContext): BehaviorResult<CrewContext> {
+    // Ensure the user has the triage skill at or above the desired priority
+    if (!this.crewHasSkillAtPriority(context,  Skill.triageWorkItem)) return;
+
     const items = context.state.openTickets.filter(t => t.assignedCrewId === context.crewMember.id && t.status === WorkItemStatus.new);
 
     if (items.length <= 0) {
@@ -19,4 +23,5 @@ export class TriageTicketBehavior extends CrewBehavior {
 
     return this.handled(context);
   }
+
 }
